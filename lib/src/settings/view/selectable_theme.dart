@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:working_with_real_projects/src/settings/bloc/settings_bloc.dart';
 import 'package:working_with_real_projects/src/settings/extensions/theme_extension.dart';
 
-// SelectableTheme is a selectable widget we are going to use for the theme mode selector
 class SelectableTheme extends StatelessWidget {
   const SelectableTheme({
     Key? key,
