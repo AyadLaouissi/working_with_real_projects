@@ -1,6 +1,6 @@
 name: working_with_real_projects
 
-on: [pull_request, push]
+on: [push]
 
 jobs:
   build:
