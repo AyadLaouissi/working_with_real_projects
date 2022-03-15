@@ -1,0 +1,33 @@
+name: working_with_real_projects
+
+on: [pull_request, push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Flutter action
+        uses: subosito/flutter-action@v1.5.3
+        with:
+          flutter-version: '2.10.2'
+          channel: 'stable'
+
+      - name: Install Dependencies
+        run: flutter packages get
+
+      - name: Format
+        run: flutter format --set-exit-if-changed lib test
+
+      - name: Analyze
+        run: flutter analyze lib test
+
+      - name: Run tests
+        run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
+
+      - name: Check Code Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
+        with:
+          min_coverage: 75
