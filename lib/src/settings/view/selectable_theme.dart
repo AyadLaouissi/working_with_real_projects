@@ -46,7 +46,7 @@ class SelectableTheme extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 6),
                 child: Text(
-                  themeMode.name(context),
+                  themeMode.name,
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),

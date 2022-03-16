@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 extension ThemeExtension on ThemeMode {
-  String name(BuildContext context) {
+  String get name {
     switch (this) {
       case ThemeMode.system:
         return 'System theme';
