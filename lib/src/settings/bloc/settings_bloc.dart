@@ -7,7 +7,6 @@ part 'settings_state.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   SettingsBloc() : super(const SettingsState(ThemeMode.system)) {
-    on<ChangeThemeEvent>(
-        (event, emit) => emit(const SettingsState(ThemeMode.dark)));
+    on<ChangeThemeEvent>((event, emit) => emit(SettingsState(event.themeMode)));
   }
 }
